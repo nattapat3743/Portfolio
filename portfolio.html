@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline-variant": "#c3c6ce",
+                        "on-secondary-container": "#45627e",
+                        "surface-dim": "#d6dade",
+                        "on-surface-variant": "#43474d",
+                        "surface": "#f6fafe",
+                        "tertiary-container": "#3b2400",
+                        "primary-fixed-dim": "#b0c9e8",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#102a43",
+                        "surface-container-high": "#e4e9ed",
+                        "surface-tint": "#49607c",
+                        "tertiary": "#201100",
+                        "tertiary-fixed-dim": "#e8c08c",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#2c3134",
+                        "primary": "#00152a",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#edf1f5",
+                        "secondary-container": "#bfddfe",
+                        "surface-bright": "#f6fafe",
+                        "on-tertiary-fixed": "#291800",
+                        "on-surface": "#171c1f",
+                        "outline": "#74777e",
+                        "surface-container-highest": "#dfe3e7",
+                        "surface-container-low": "#f0f4f8",
+                        "on-tertiary-container": "#ad8a5a",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b0c9e8",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffddb4",
+                        "on-tertiary-fixed-variant": "#5d4119",
+                        "primary-fixed": "#d1e4ff",
+                        "on-secondary-fixed-variant": "#2c4964",
+                        "surface-variant": "#dfe3e7",
+                        "secondary-fixed": "#cee5ff",
+                        "secondary-fixed-dim": "#accaea",
+                        "surface-container": "#eaeef2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary": "#44617d",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#314863",
+                        "on-secondary-fixed": "#001d33",
+                        "background": "#f6fafe",
+                        "on-background": "#171c1f",
+                        "on-primary-fixed": "#011d35",
+                        "on-primary-container": "#7a92b0"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            background: rgba(223, 227, 231, 0.6);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #00152a 0%, #44617d 100%);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="text-primary font-headline font-bold text-xl tracking-tight">My Portfolio</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#home">Home</a>
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#activities">Activities</a>
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#documents">Documents</a>
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#skills">Skills</a>
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#education">Education</a>
+                <a class="text-on-surface-variant hover:text-primary font-label font-medium transition-colors"
+                    href="#contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openPDF('resume.pdf', 'Resume')"
+                    class="px-5 py-2.5 hero-gradient text-on-primary font-label font-semibold rounded-lg shadow-lg shadow-primary/10 hover:brightness-110 transition-all">
+                    My Resume
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[85vh] flex items-center overflow-hidden bg-primary text-on-primary">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div
+                    class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary-container blur-[120px] rounded-full">
+                </div>
+                <div
+                    class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary-container blur-[120px] rounded-full">
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="space-y-2">
+                        <h1
+                            class="text-5xl lg:text-7xl font-display font-black tracking-wide leading-tight animate-fade-up">
+                            NATTAPAT SUWANNAYUHA
+                        </h1>
+                        <h2 class="text-2xl lg:text-3xl font-headline font-medium text-primary-fixed-dim">
+                            System Analyst / Business Analyst
+                        </h2>
+                    </div>
+                    <p class="text-lg lg:text-xl text-on-primary-container leading-relaxed max-w-2xl">
+                        As an Information Technology student, I am committed to transforming business requirements
+                        into technical solutions, leveraging my academic foundation in data modeling and digital
+                        innovation process optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div
+                            class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-secondary-fixed">school</span>
+                            <span class="text-sm font-medium">Kasetsart University Kampangsaen campus</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
+                            <span class="material-symbols-outlined text-secondary-fixed">laptop</span>
+                            <span class="text-sm font-medium">Information Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full aspect-square max-w-[450px] group">
+
+                        <!-- กรอบหลัง (เงา gradient) -->
+                        <div class="absolute inset-0 rounded-2xl rotate-3
+                bg-gradient-to-br from-primary-fixed-dim via-secondary to-primary
+                opacity-60 blur-sm group-hover:rotate-6 group-hover:opacity-80
+                transition-all duration-500"></div>
+
+                        <!-- กรอบกลาง (border ทอง-ฟ้า) -->
+                        <div class="absolute inset-[-6px] rounded-2xl rotate-3
+                bg-gradient-to-tr from-[#b0c9e8] via-[#ffffff30] to-[#44617d]
+                group-hover:rotate-6 transition-transform duration-500"></div>
+
+                        <!-- รูปภาพ -->
+                        <img alt="Profile Picture" onclick="openProfile()" class="w-full h-full object-cover object-center rounded-2xl shadow-2xl relative z-10 -rotate-3
+                        group-hover:rotate-0 group-hover:scale-105 transition-all duration-500 cursor-pointer"
+                            src="images/pro.png" />
+
+                        <!-- Shine overlay -->
+                        <div class="absolute inset-0 rounded-2xl z-20 -rotate-3
+                bg-gradient-to-tr from-transparent via-white/10 to-transparent
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                pointer-events-none"></div>
+
+                    </div>
+                </div>
+        </section>
+        <!-- Academic & Personal Projects -->
+        <section class="py-24 bg-surface">
+            <div id="activities" class="max-w-7xl mx-auto px-6">
+                <div class="mb-16">
+                    <h3 class="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">My Activities</h3>
+                    <h2 class="text-4xl font-headline font-bold text-primary tracking-tight">Activities</h2>
+                </div>
+
+                <!-- Wrapper with buttons -->
+                <div class="relative">
+
+                    <!-- ปุ่มซ้าย -->
+                    <button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10
+                       w-12 h-12 flex items-center justify-center
+                       bg-white/10 hover:bg-white/25 backdrop-blur-sm
+                       border border-white/20 rounded-full
+                       text-primary shadow-lg
+                       transition-all duration-300 hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <!-- ปุ่มขวา -->
+                    <button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10
+                       w-12 h-12 flex items-center justify-center
+                       bg-white/10 hover:bg-white/25 backdrop-blur-sm
+                       border border-white/20 rounded-full
+                       text-primary shadow-lg
+                       transition-all duration-300 hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+
+                    <!-- Scrollable Cards -->
+                    <div id="cardScroller" class="flex gap-8 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory
+                       [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+
+                        <!-- Project Card 1 -->
+                        <div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden
+                            flex flex-col hover:shadow-xl transition-shadow duration-500
+                            min-w-[320px] max-w-[320px] snap-start">
+                            <div class="relative h-64 overflow-hidden">
+                                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    style="object-position: center 60%;" src="images/tio.jpg" />
+                                <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors">
+                                </div>
+                            </div>
+                            <div class="p-8 flex-1 flex flex-col">
+                                <h4 class="text-xl font-headline font-bold text-primary mb-3">
+                                    ค่าย Turn IT On</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                                    ได้เข้าร่วมค่าย Turn IT On ซึ่งเป็นค่ายที่มุ่งเน้นการพัฒนาทักษะด้านเทคโนโลยีสารสนเทศ
+                                    โดยได้เรียนรู้เกี่ยวกับการเขียนโปรแกรม การพัฒนาเว็บไซต์ และการใช้เครื่องมือต่างๆ
+                                    ที่สาขาจัดขึ้น
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden
+                            flex flex-col hover:shadow-xl transition-shadow duration-500
+                            min-w-[320px] max-w-[320px] snap-start">
+                            <div class="relative h-64 overflow-hidden">
+                                <img alt="IOT Project"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="images/IOT.png" />
+                                <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors">
+                                </div>
+                            </div>
+                            <div class="p-8 flex-1 flex flex-col">
+                                <h4 class="text-xl font-headline font-bold text-primary mb-3">IOT Project
+                                    เซนเซอร์ตรวจจับน้ำฝน</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                                    ออกแบบและพัฒนาเซนเซอร์ตรวจจับน้ำฝนโดยใช้เทคโนโลยี IoT
+                                    เพื่อวัดปริมาณน้ำฝนและส่งข้อมูลแบบเรียลไทม์ผ่านเครือข่ายไร้สาย
+                                    โดยสามารถสั่งการผ่านแอปพลิเคชันบนมือถือเพื่อแจ้งเตือนผู้ใช้เมื่อมีฝนตก
+                                </p>
+                                <button onclick="openVideo('videoes/IOT Pro.mp4')"
+                                    class="flex items-center gap-2 text-primary font-bold text-sm group/btn">
+                                    View Video Project
+                                    <span
+                                        class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden
+            flex flex-col hover:shadow-xl transition-shadow duration-500
+            min-w-[320px] max-w-[320px] snap-start">
+                            <div class="relative h-64 overflow-hidden">
+                                <img alt="INET"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="images/Inet2.jpg" />
+                                <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors">
+                                </div>
+
+                                <!-- Logo Badge -->
+                                <div class="absolute inset-0 flex items-end justify-center pb-3">
+                                    <div
+                                        class="w-14 h-14 rounded-full shadow-lg ring-2 ring-white ring-offset-2 overflow-hidden">
+                                        <img src="images/inetlogo.png" alt="INET Logo"
+                                            class="w-full h-full object-cover rounded-full scale-125" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="p-8 flex-1 flex flex-col">
+                                <h4 class="text-xl font-headline font-bold text-primary mb-3">ดูงาน ณ บริษัท
+                                    อินเทอร์เน็ต ประเทศไทย จำกัด</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                                    ได้มีโอกาสไปดูงานที่บริษัท อินเทอร์เน็ต ประเทศไทย จำกัด จังหวัด สระบุรี
+                                    ซึ่งเป็นผู้ให้บริการอินเทอร์เน็ตและโครงข่ายโทรคมนาคมชั้นนำของประเทศ
+                                    โดยได้เรียนรู้เกี่ยวกับการบริหารจัดการเครือข่าย การให้บริการลูกค้า
+                                    และเทคโนโลยีที่ใช้ในการดำเนินงานของบริษัท
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden
+                            flex flex-col hover:shadow-xl transition-shadow duration-500
+                            min-w-[320px] max-w-[320px] snap-start">
+                            <div class="relative h-64 overflow-hidden">
+                                <img alt="Project 4"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="images/ZahiraIOT.jpg" />
+                                <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors">
+                                </div>
+                                <!-- Logo Badge -->
+                                <div class="absolute inset-0 flex items-end justify-center pb-3">
+                                    <div
+                                        class="w-14 h-14 rounded-full shadow-lg ring-2 ring-white ring-offset-2 overflow-hidden">
+                                        <img src="images/zahiralogo.jpg" alt="INET Logo"
+                                            class="w-full h-full object-cover rounded-full scale-125" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-8 flex-1 flex flex-col">
+                                <h4 class="text-xl font-headline font-bold text-primary mb-3">ดูงาน ณ บริษัท Zahira Farm
+                                </h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                                    ได้มีโอกาสไปดูงานที่บริษัท Zahira Farm ซึ่งเป็นฟาร์มอัจฉริยะที่ใช้เทคโนโลยี IoT
+                                    ในการเกษตร โดยได้เรียนรู้เกี่ยวกับการใช้เซนเซอร์และระบบอัตโนมัติในการจัดการฟาร์ม
+                                    รวมถึงการวิเคราะห์ข้อมูลเพื่อเพิ่มประสิทธิภาพการผลิตและลดต้นทุนในการดำเนินงาน
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Project Card 5 -->
+                        <div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl overflow-hidden
+                            flex flex-col hover:shadow-xl transition-shadow duration-500
+                            min-w-[320px] max-w-[320px] snap-start">
+                            <div class="relative h-64 overflow-hidden">
+                                <img alt="Project 4"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    src="images/train ai.jpg" />
+                                <div class="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors">
+                                </div>
+                            </div>
+                            <div class="p-8 flex-1 flex flex-col">
+                                <h4 class="text-xl font-headline font-bold text-primary mb-3">เข้าร่วมการอบรม
+                                    ความปลอดภัยทางไซเบอร์</h4>
+                                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-1">
+                                    ได้เข้าร่วมการอบรมเกี่ยวกับความปลอดภัยทางไซเบอร์ ซึ่งเป็นหัวข้อที่สำคัญในยุคดิจิทัล
+                                    โดยได้เรียนรู้เกี่ยวกับวิธีการป้องกันข้อมูลส่วนบุคคล การรักษาความปลอดภัยของระบบ
+                                    และการรับมือกับภัยคุกคามทางไซเบอร์ที่เพิ่มขึ้นในปัจจุบัน
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js" defer></script>
+        </section>
+        <!-- Certificates -->
+        <section class="py-24 bg-surface-container-low">
+            <div id='documents' class="max-w-7xl mx-auto px-6">
+                <div class="mb-16 reveal">
+                    <h3 class="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">Documents</h3>
+                    <h2 class="text-4xl font-headline font-bold text-primary tracking-tight">Certificates & Workshops
+                    </h2>
+                </div>
+
+                <!-- Folder Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+
+                    <!-- Cert 1: Certificate -->
+                    <div onclick="openImage('images/Cer2.jpg', 'เกียรติบัตรเรียนดี')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg1)" />
+                                <defs>
+                                    <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/Cer2.jpg"
+                                    class="w-14 h-14 object-cover rounded-md shadow-sm opacity-90" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">เกียรติบัตรเรียนดี</p>
+                        </div>
+                    </div>
+                    <!-- Cert 1: Python -->
+                    <div onclick="openPDF('python_basic certificate.pdf', 'Python Basic')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg1)" />
+                                <defs>
+                                    <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/python.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">Python HackerRank</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: Angular -->
+                    <div onclick="openPDF('angular_basic certificate.pdf', 'Angular Basic')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg2)" />
+                                <defs>
+                                    <linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/angular.png"
+                                    class="w-14 h-14 object-cover rounded-md shadow-sm opacity-90" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">Angular HackerRank</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: CSS -->
+                    <div onclick="openPDF('css certificate.pdf', 'CSS Basic')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg3)" />
+                                <defs>
+                                    <linearGradient id="cg3" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/css.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">CSS HackerRank</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Java -->
+                    <div onclick="openPDF('java_basic certificate.pdf', 'Java Basic')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg4)" />
+                                <defs>
+                                    <linearGradient id="cg4" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/java.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">Java HackerRank</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 5: JavaScript -->
+                    <div onclick="openPDF('javascript_basic certificate.pdf', 'JavaScript Basic')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg5)" />
+                                <defs>
+                                    <linearGradient id="cg5" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/javascript.png"
+                                    class="w-14 h-14 object-cover rounded-md shadow-sm opacity-90" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">JavaScript HackerRank
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: SQL -->
+                    <div onclick="openPDF('sql_intermediate certificate.pdf', 'SQL Intermediate')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg6)" />
+                                <defs>
+                                    <linearGradient id="cg6" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/sql.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">SQL HackerRank</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: SQL -->
+                    <div onclick="openPDF('22-Nattapat-ตำแหน่ง.pdf', 'ระบบจองตั๋วภาพยนตร์ออนไลน์และระบบเว็บไซต์สั่งซื้อรถยนต์ออนไลน์')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg6)" />
+                                <defs>
+                                    <linearGradient id="cg6" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/PDF.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">SA Movie & Car Doc</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: SQL -->
+                    <div onclick="openPDF('22-Nattapat-ระบบการติดตามการจัดส่งสินค้า.pdf', 'ระบบการติดตามการจัดส่งสินค้า')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg6)" />
+                                <defs>
+                                    <linearGradient id="cg6" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/PDF.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">SA Delivery Doc</p>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: SQL -->
+                    <div onclick="openPDF('Cheese.pdf', 'Ai แยกประเภทชีส')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg6)" />
+                                <defs>
+                                    <linearGradient id="cg6" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/cheese.png" class="w-12 h-12 object-contain" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">Ai แยกประเภทชีส</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 bg-surface">
+            <div class="max-w-7xl mx-auto px-6">
+
+                <!-- Header -->
+                <div class="mb-16 reveal">
+                    <h3 class="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">Expertise</h3>
+                    <h2 class="text-4xl font-headline font-bold text-primary">Skills & Tools</h2>
+                </div>
+                <!-- Technical Skills -->
+                <div class="mb-12 reveal">
+                    <h4 class="text-lg font-headline font-bold text-primary mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">terminal</span>
+                        Coding Skills
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/python.png" alt="Python"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-semibold text-primary">Python</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/java.png" alt="Java"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Java</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/html.png" alt="HTML"
+                                class="w-8 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">HTML</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/css.png" alt="CSS"
+                                class="w-6 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">CSS</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/javascript.png" alt="JavaScript"
+                                class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">JavaScript</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/dart.png" alt="Dart"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Dart</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/flutter.png" alt="Flutter"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Flutter</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/mysql.png" alt="MySQL"
+                                class="w-16 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">MySQL</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="mb-12 reveal">
+                    <h4 class="text-lg font-headline font-bold text-primary mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">handyman</span>
+                        Tools
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/vscode.png" alt="Vs Code"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-semibold text-primary">Vs Code</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/draw.io.png" alt="Draw.io"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Draw.io</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/figma.png" alt="Figma"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Figma</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/canva.png" alt="Canva"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Canva</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/word.png" alt="Word"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Microsoft Word</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/excel.png" alt="Excel"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Microsoft Excel</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/powerpoint.png" alt="PowerPoint"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Microsoft PowerPoint</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/visio.png" alt="Microsoft Visio"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">Microsoft Visio</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center justify-end gap-3 p-4 bg-surface-container-lowest rounded-2xl border border-outline-variant/10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/dbeaver.png" alt="DBeaver"
+                                class="w-7 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold text-primary">DBeaver</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="reveal">
+                    <h4 class="text-lg font-headline font-bold text-primary mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">psychology</span>
+                        Soft Skills & Languages
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined text-secondary-fixed"
+                                    style="font-size:28px;">groups</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">Teamwork</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined text-secondary-fixed"
+                                    style="font-size:28px;">communication</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">Communication</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined text-secondary-fixed"
+                                    style="font-size:28px;">troubleshoot</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">Problem Solving</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-white/20 transition-colors group-hover:scale-110 duration-300">
+                                <span class="material-symbols-outlined text-secondary-fixed"
+                                    style="font-size:28px;">emoji_objects</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">Creative Thinking</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/thai.png"
+                                class="w-12 h-12 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">Thai</p>
+                                <p class="text-[10px] text-secondary-fixed-dim font-semibold mt-0.5">Native</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="group flex flex-col items-center gap-3 p-4 bg-primary text-on-primary rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                            <img src="images/english.png"
+                                class="w-12 h-12 object-cover rounded-full group-hover:scale-110 transition-transform duration-300" />
+                            <div class="text-center">
+                                <p class="text-sm font-headline font-bold">English</p>
+                                <p class="text-[10px] text-secondary-fixed-dim font-semibold mt-0.5">Conversational</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PDF Modal -->
+        <div id="pdfModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm
+           opacity-0 pointer-events-none transition-opacity duration-300">
+
+            <div class="bg-surface rounded-2xl shadow-2xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden
+                scale-95 transition-transform duration-300" id="pdfModalBox">
+
+                <!-- Modal Header -->
+                <div class="flex items-center justify-between px-6 py-4 border-b border-outline-variant/20">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+                        <h4 class="font-headline font-bold text-primary" id="pdfTitle">Document</h4>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <!-- ปุ่ม Download -->
+                        <a id="pdfDownload" href="#" download class="flex items-center gap-1 px-4 py-2 bg-primary text-on-primary text-sm font-medium
+                           rounded-lg hover:opacity-90 transition-opacity">
+                            <span class="material-symbols-outlined" style="font-size:18px;">download</span>
+                            Download
+                        </a>
+                        <!-- ปุ่มปิด -->
+                        <button onclick="closePDF()" class="w-9 h-9 flex items-center justify-center rounded-full
+                           bg-surface-container hover:bg-surface-container-high transition-colors">
+                            <span class="material-symbols-outlined text-on-surface-variant">close</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PDF Viewer -->
+                <iframe id="pdfViewer" src="" class="flex-1 w-full border-0"></iframe>
+            </div>
+        </div>
+
+        <script src="script.js" defer></script>
+        <!-- Skills & Tools Section -->
+        <!-- Education & Extracurriculars -->
+        <section id="education" class="py-24 bg-surface-container-low">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">Academic Journey</h3>
+                    <h2 class="text-4xl font-headline font-bold text-primary">Education &amp; Activities</h2>
+                </div>
+                <div
+                    class="space-y-0 relative before:absolute before:left-4 md:before:left-1/2 before:top-0 before:bottom-0 before:w-px before:bg-outline-variant/30">
+                    <!-- Education 1 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row items-start">
+                        <div
+                            class="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 mt-2 shadow-[0_0_0_4px_rgba(0,21,42,0.1)]">
+                        </div>
+                        <div class="md:w-1/2 pl-12 md:pl-0 md:pr-16 md:text-right">
+                            <span class="text-sm font-bold text-secondary">2023 — Present</span>
+                            <h4 class="text-xl font-headline font-bold text-primary mt-1">Kasetsart University</h4>
+                            <p class="text-on-surface font-medium text-sm">Kampangsaen campus</p>
+                        </div>
+                        <div class="md:w-1/2 pl-12 md:pl-16 mt-2 md:mt-0">
+                            <p class="text-sm text-on-surface-variant leading-relaxed">
+                                เกรดเฉลี่ย 3.25 คณะศิลปศาสตร์และวิทยาศาสตร์ สาขาวิชาเทคโนโลยีสารสนเทศ (ภาคพิเศษ)
+                                ชั้นปีที่ 3
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Experience 2 -->
+                    <div class="relative mb-12 flex flex-col md:flex-row items-start">
+                        <div class="absolute left-4 md:left-1/2 w-3 h-3 bg-outline rounded-full -translate-x-1.5 mt-2">
+                        </div>
+                        <div class="md:w-1/2 pl-12 md:pl-0 md:pr-16 md:text-right">
+                            <span class="text-sm font-bold text-secondary">2020 — 2023</span>
+                            <h4 class="text-xl font-headline font-bold text-primary mt-1">Huahin Vitthayalai School</h4>
+                            <p class="text-on-surface font-medium text-sm">Salesian International College</p>
+                        </div>
+                        <div class="md:w-1/2 pl-12 md:pl-16 mt-2 md:mt-0">
+                            <p class="text-sm text-on-surface-variant leading-relaxed">
+                                เกรดเฉลี่ย 3.45 สายศิลป์-คำนวณ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary-container text-on-primary-container py-20">
+        <div id='contact' class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center text-center gap-6 border-b border-on-primary-container/10 pb-12">
+                <h3 class="text-xl font-headline font-bold text-on-primary">Contact</h3>
+
+                <!-- Social Icons -->
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                        href="https://www.facebook.com/nattapat.suwannayuha.2025" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                        href="https://www.instagram.com/xrtistzz._/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-on-primary-container/20 flex items-center justify-center hover:bg-secondary-container hover:text-on-secondary-container transition-all"
+                        href="https://github.com/nattapat3743" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.929.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Email & Phone -->
+                <div class="flex flex-col sm:flex-row gap-6 mt-2">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary-fixed" style="font-size:18px;">mail</span>
+                        <span class="text-sm font-medium text-on-primary">snowxrt10@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary-fixed" style="font-size:18px;">mail</span>
+                        <span class="text-sm font-medium text-on-primary">nattapat.suwa@ku.th</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary-fixed" style="font-size:18px;">call</span>
+                        <span class="text-sm font-medium text-on-primary">095-884-4642</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+    <!-- Video Modal -->
+    <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm
+           opacity-0 pointer-events-none transition-opacity duration-300">
+
+        <div id="videoModalBox" class="bg-surface rounded-2xl shadow-2xl w-full max-w-4xl overflow-hidden
+               scale-95 transition-transform duration-300">
+
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-outline-variant/20">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">play_circle</span>
+                    <h4 class="font-headline font-bold text-primary">Video Project</h4>
+                </div>
+                <button onclick="closeVideo()" class="w-9 h-9 flex items-center justify-center rounded-full
+                       bg-surface-container hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-on-surface-variant">close</span>
+                </button>
+            </div>
+
+            <!-- Video Player -->
+            <div class="relative w-full aspect-video bg-black">
+                <iframe id="videoPlayer" src="" allow="autoplay; encrypted-media" allowfullscreen
+                    class="w-full h-full border-0"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
