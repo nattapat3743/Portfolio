@@ -57,30 +57,6 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePDF();
 });
 
-// Video Modal
-function openVideo(url) {
-    const modal    = document.getElementById('videoModal');
-    const modalBox = document.getElementById('videoModalBox');
-    const player   = document.getElementById('videoPlayer');
-
-    player.src = url + '?autoplay=1';
-    modal.classList.remove('opacity-0', 'pointer-events-none');
-    modalBox.classList.remove('scale-95');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeVideo() {
-    const modal    = document.getElementById('videoModal');
-    const modalBox = document.getElementById('videoModalBox');
-    const player   = document.getElementById('videoPlayer');
-
-    modal.classList.add('opacity-0', 'pointer-events-none');
-    modalBox.classList.add('scale-95');
-    document.body.style.overflow = '';
-
-    setTimeout(() => { player.src = ''; }, 300);
-}
-
 // ปิดเมื่อคลิกพื้นหลัง
 document.getElementById('videoModal').addEventListener('click', function(e) {
     if (e.target === this) closeVideo();
