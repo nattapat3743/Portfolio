@@ -400,6 +400,32 @@
                             <p class="text-xs font-headline font-bold text-primary leading-tight">เกียรติบัตรเรียนดี</p>
                         </div>
                     </div>
+
+                     <!-- Cert 1: Certificate -->
+                    <div onclick="openImage('images/microsoft.jpg', 'เกียรติบัตรอบรม Microsoft')"
+                        class="group flex flex-col items-center gap-3 cursor-pointer">
+                        <div class="relative w-full aspect-square max-w-[120px] mx-auto">
+                            <svg viewBox="0 0 120 100"
+                                class="w-full h-full drop-shadow-lg group-hover:scale-105 group-hover:drop-shadow-xl transition-all duration-300">
+                                <path d="M8,20 L45,20 L52,12 L112,12 L112,88 L8,88 Z" fill="#b0c9e8" />
+                                <path d="M8,28 L112,28 L112,88 L8,88 Z" fill="url(#cg1)" />
+                                <defs>
+                                    <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#eef4fb" />
+                                        <stop offset="100%" stop-color="#c8dff2" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center pt-5">
+                                <img src="images/microsoft.jpg"
+                                    class="w-14 h-14 object-cover rounded-md shadow-sm opacity-90" />
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-xs font-headline font-bold text-primary leading-tight">เกียรติบัตรอบรม Microsoft</p>
+                        </div>
+                    </div>
+
                     <!-- Cert 1: Python -->
                     <div onclick="openPDF('python_basic certificate.pdf', 'Python Basic')"
                         class="group flex flex-col items-center gap-3 cursor-pointer">
